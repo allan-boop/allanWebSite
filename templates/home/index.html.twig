@@ -1,8 +1,10 @@
 {% extends 'layout/base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Home{% endblock %}
 
 
 {% block body %}
-
+    <style> body {background-image: url('/img/wallpaper.jpg'); background-size: cover; background-repeat: no-repeat;}</style>
+    {% include 'home/resume.html.twig'%}
+    {% include 'home/languages.html.twig'%}
 {% endblock %}
