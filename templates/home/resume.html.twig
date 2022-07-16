@@ -5,12 +5,12 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">Allan HANS</h5>
-        <p class="card-text mb-1"><small class="text-muted">Développeur web</small></p>
+        <h5 class="card-title">{{ allan.prenom }} {{ allan.nom }}</h5>
+        <p class="card-text mb-1"><small class="text-muted">{{ allan.metier}}</small></p>
         <div style="margin-left: 7%;">
-            <p class="card-text mb-0"><i class="bi bi-phone"></i> 06.59.68.28.92</p>
-            <p class="card-text mb-0"><i class="bi bi-envelope"></i> allan.hans68350@gmail.com</p>
-            <p class="card-text mb-1"><i class="bi bi-geo-alt"></i> Strasbourg</p>
+            <p class="card-text mb-0"><i class="bi bi-phone"></i> {{ allan.telephone }}</p>
+            <p class="card-text mb-0"><i class="bi bi-envelope"></i> {{ allan.mail }}</p>
+            <p class="card-text mb-1"><i class="bi bi-geo-alt"></i> {{ allan.localisation }}</p>
         </div>
         <a href="#"><i class="bi bi-plus-square"></i> A propos de moi</a>
         </br>
