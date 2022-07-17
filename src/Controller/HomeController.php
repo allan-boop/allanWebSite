@@ -18,7 +18,6 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'allan' => $allan,
             'languages' => $languages,
-            'controller_name' => 'HomeController',
         ]);
     }
 }
