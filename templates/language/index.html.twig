@@ -1,0 +1,35 @@
+{% extends 'layout/base.html.twig' %}
+{% block body %}
+    <div style="margin-left: auto; margin-right: auto; width: 50vw;">
+        {% for language in languages %}
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item" style="width: 75%;">{{ language.nom }}</li>
+                <li class="list-group-item" style="width: 25%;"><a href="/language/delete/{{ language.id }}">delete</a></li>
+            </ul>
+        {% endfor %}
+        <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" style="width: 100%;">
+                <h4>Ajouter:</h4>
+            </li>
+        </ul>
+        {{ form_start(form) }}        
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item" style="width: 100%;">
+                    <div class="form-group mb-5">
+                        <label class="form-label" for="formulaireContactNom">
+                            {{ form_label(form.nom) }}
+                        </label>
+                        {{ form_widget(form.nom)}}
+                    </div>
+                </li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item" style="width: 100%;">
+                    <div class="form-group mb-0">
+                        {{ form_widget(form.envoyer)}}
+                    </div>                
+                </li>
+            </ul>        
+        {{ form_end(form) }}        
+    </div>
+{% endblock %}
