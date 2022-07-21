@@ -1,0 +1,80 @@
+{% extends 'layout/base.html.twig' %}
+{% block body %}
+<div class="container d-flex flex-column">
+    <div class="row align-items-center justify-content-between gx-0 min-vh-100">
+        <div class="col-12 col-md-6 py-8 py-md-11">
+            {{ form_start(form) }}
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+                <div class="form-group mb-5">
+                    <label class="form-label" for="">
+                        {{ form_label(form.prenom) }}
+                    </label>
+                    {{ form_widget(form.prenom)}}
+                </div>
+                <div class="form-group mb-5">
+                    <label class="form-label" for="">
+                        {{ form_label(form.nom) }}
+                    </label>
+                    {{ form_widget(form.nom)}}
+                </div>
+                <div class="form-group mb-5">
+                    <label class="form-label" for="">
+                        {{ form_label(form.age) }}
+                    </label>
+                    {{ form_widget(form.age)}}
+                </div>
+                <div class="form-group mb-5">
+                    <label class="form-label" for="">
+                        {{ form_label(form.metier) }}
+                    </label>
+                    {{ form_widget(form.metier)}}
+                </div>
+                <div class="form-group mb-5">
+                    <label class="form-label" for="">
+                        {{ form_label(form.mail) }}
+                    </label>
+                    {{ form_widget(form.mail)}}
+                </div>        
+                <div class="form-group mb-5">
+                    <label class="form-label" for="">
+                        {{ form_label(form.telephone) }}
+                    </label>
+                    {{ form_widget(form.telephone)}}
+                </div>
+                <div class="form-group mb-5">
+                    <label class="form-label" for="">
+                        {{ form_label(form.localisation) }}
+                    </label>
+                    {{ form_widget(form.localisation)}}
+                </div>
+                <div class="form-group mb-5">
+                    <label class="form-label" for="">
+                        {{ form_label(form.description) }}
+                    </label>
+                    {{ form_widget(form.description)}}
+                </div>
+                <div class="form-group mb-5">
+                    <label class="form-label" for="">
+                        {{ form_label(form.photo) }}
+                    </label>
+                    {{ form_widget(form.photo)}}
+                </div>
+                <div class="form-group mb-5">
+                    <label class="form-label" for="">
+                        {{ form_label(form.cv) }}
+                    </label>
+                    {{ form_widget(form.cv)}}
+                </div>
+                <div class="form-group mb-0">
+                    {{ form_widget(form.update)}}
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
