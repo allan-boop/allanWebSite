@@ -4,7 +4,7 @@
         {% for language in languages %}
             <ul class="list-group list-group-horizontal">
                 <li class="list-group-item" style="width: 75%;">{{ language.nom }}</li>
-                <li class="list-group-item" style="width: 25%;"><a href="/language/delete/{{ language.id }}">delete</a></li>
+                <li class="list-group-item" style="width: 25%;"><a href="/admin/language/delete/{{ language.id }}">delete</a></li>
             </ul>
         {% endfor %}
         <ul class="list-group list-group-horizontal">
