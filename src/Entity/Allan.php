@@ -5,8 +5,12 @@ namespace App\Entity;
 use App\Repository\AllanRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 #[ORM\Entity(repositoryClass: AllanRepository::class)]
+#[Vich\Uploadable] 
 class Allan
 {
     #[ORM\Id]
@@ -42,7 +46,13 @@ class Allan
     private ?string $photo = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $cv = null;
+    private ?string $cv;
+
+    #[Vich\UploadableField(mapping: 'cvFile', fileNameProperty: 'cv')]
+     private File $cvFile;
+
+    #[ORM\Column(type: 'datetime')]
+    private ?\DateTime $updatedAt;
 
     public function getId(): ?int
     {
@@ -167,5 +177,19 @@ class Allan
         $this->cv = $cv;
 
         return $this;
+    }
+
+    public function setCvFile(File $pdf)
+    {
+        $this->cvFile = $pdf;
+        if ($pdf) {
+            $this->updatedAt = new \DateTime('now');
+        }
+        return $this;
+    }
+
+    public function getCvFile(): ?File
+    {
+        return $this->cvFile;
     }
 }
