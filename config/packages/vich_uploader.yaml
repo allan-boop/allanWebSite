@@ -1,0 +1,10 @@
+vich_uploader:
+    db_driver: orm
+    metadata:
+        type: attribute 
+
+    mappings:
+        cvFile:
+            uri_prefix: /cvFile
+            upload_destination: '%upload_directory%'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
